@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MGC Guide</title>
+		<link rel="icon" href="img/favicon.ico">
+        <meta charset="utf-8"/>   
+        <meta name="description" content="MGC repository guide">
+        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1"/><!-- Imprescindible para vista mobil -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+        <link rel=stylesheet href="css/index.css" type="text/css"/>
+		<!--script src="../jq3.2.1/public_html/jquery-3.2.1.min.js" type="text/javascript"></script-->
+        <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+		<script src="js/jquery-ui.min.1.12.1.js" type="text/javascript"></script>
+		<!--script src="js/ResizeSensor.js" type="text/javascript"></script-->
+		<script src="js/mgc.slider3d.js" type="text/javascript"></script>
+		<script src="js/mgc.languagepicker.js" type="text/javascript"></script>
+		<script src="js/tr.js" type="text/javascript"></script>
+		<script src="js/index.js" type="text/javascript"></script>
+    </head>
+    <body>
+		<header>
+			<img class="menu_ver" src="img/menu_ver.png" alt="menu_ver.png" title="Menú"/>
+			<img class="logo" src="img/logo-mg.png" alt="logo-mg.png" title="Manuel García Criado"/>
+			<h2>Manuel García Criado</h2>
+			<!--textarea id="txt_dump" style="width:50px; position: absolute; left: 0;"></textarea-->
+			<img class="menu_hor" src="img/menu_hor.png" alt="menu_ver.png" title="Menú"/>
+			<a class="language">
+			</a>
+			<div class="menu_ver">
+				<a class="selected" href="#">Demo Posicionamiento</a>
+				<a href="#">Instalación del plugin</a>
+				<a href="#">Inicialización del plugin</a>
+				<a href="#">Funciones Posicionamiento</a>
+				<a href="#">Demo Animación</a>
+				<a href="#">Funciones Animación</a>
+				<a href="#">Demo Vídeos</a>
+			</div>
+			<div class="menu_hor">
+				<a class="selected" href="#">Mgc.slider3d</a>
+				<a href="#">GitHub</a>
+				<a style='display: none;' href="#">C.V.</a>
+			</div>
+		</header>
+		<nav id="nav_hor">
+			<ul>
+				<li><a href="#" class="selected">Mgc.slider3d</a></li>
+				<li><a href="#">GitHub</a></li>
+				<li style='display: none;'><a href="#">C.V.</a></li>
+			</ul>
+		</nav>
+		<nav id="nav_ver">
+			<ul>
+				<li class="selected"><a href="#">Demo Posicionamiento</a></li>
+				<li><a href="#">Instalación del plugin</a></li>
+				<li><a href="#">Inicialización del plugin</a></li>
+				<li><a href="#">Funciones Posicionamiento</a></li>
+				<li><a href="#">Demo Animación</a></li>
+				<li><a href="#">Funciones Animación</a></li>
+				<li><a href="#">Demo Vídeos</a></li>
+			</ul>
+		</nav>
+		<section>
+			<article id="art_posic">
+				<button class="btn_animation">Posicionarse</button>
+				<div>
+				<p>MGC.Slider3d es un carousel orientado a la ejecución de presentaciones
+					que admite tanto imágenes como vídeos en su contenido.</p>
+				<p>Desde JavaScript podemos indicarle de formas diferentes en que elemento queremos 
+					posicionarnos. El plugin de este ejemplo contiene 9 imágenes y un video.</p>
+				</div>
+				<div class="panel">
+					<div class="carrusel">
+					</div>
+					<form>
+						<fieldset>
+							<legend>MOVIENDO EL CARRUSEL</legend>
+							<button type="button" id="btn_der">move 1</button>
+							<button type="button" id="btn_izq">move -1</button>
+							<button type="button" id="btn_moveto">moveTo</button>
+							<input type="number" class="itemnum" min="0" max="9" step="1" value="0"/>
+							<button type="button" id="btn_showcontrols">showControls</button>
+							<button type="button" id="btn_hidecontrols">hideControls</button>
+							<button type="button" id="btn_showindicators">showIndicators</button>
+							<button type="button" id="btn_hideindicators">hideIndicators</button>
+							<button type="button" id="btn_random">random</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="paginar">
+					<img style="visibility: hidden" src="img/fizq.png" alt="fizq.png" title="previous" class="anterior"/>
+					<img style="visibility: hidden" src="img/fizq2.png" alt="fizq2.png" title="next" class="anterior mini"/>
+					<img src="img/fder2.png" alt="fder2.png" title="next" class="siguiente mini"/>
+					<img src="img/fder.png" alt="fder.png" title="next" class="siguiente"/>
+				</div>
+			</article>
+			<article id="art_inst" style="display: none">
+				<p> La instalación del plugin
+					requiere lo siguiente:</p>
+				<div class="edit">
+					<p class="comment">Copiar los archivos de las licencias junto con los 
+						ficheros js en vuestro sitio web:<br/>
+					ej:</p>
+					<p class="code">js/LICENSE JQuery.txt<br/>
+						js/LICENSE JQuery-ui.txt</p>
+					<br/>
+					<p class="comment">Copiar y/o enlazar los siguientes archivos en vuestro
+						sitio web respetando el orden siguiente:<br/>
+						ej:</p>
+					<p class="code">js/jquery-3.2.1.min.js<br/>
+						js/jquery-ui.min.1.12.1.js<br/>
+						js/mgc.slider3d.js</p>
+					<br/>
+					<p class="code">...HTML<br/>
+						&lt;script src="js/jquery-3.2.1.min.js" type="text/javascript"></script><br/>
+						&lt;script src="js/jquery-ui.min.1.12.1.js" type="text/javascript"></script><br/>
+						&lt;script src="js/mgc.slider3d.js" type="text/javascript"></script></p>
+					<br/>
+					<p class="comment">Inicializar el plugin una vez leido el DOM:<br/>
+					ej:</p>
+					<p class="code">...JS<br/>
+					$(function () {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#carousel').slider3d({<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items: items,<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
+					});</p>
+				</div>
+				<div class="paginar">
+					<img src="img/fizq.png" alt="fizq.png" title="previous" class="anterior"/>
+					<img src="img/fizq2.png" alt="fizq2.png" title="next" class="anterior mini"/>
+					<img src="img/fder2.png" alt="fder2.png" title="next" class="siguiente mini"/>
+					<img src="img/fder.png" alt="fder.png" title="next" class="siguiente"/>
+				</div>
+			</article>
+			<article id="art_inic" style="display: none">
+				<p>La inicialización 
+					del plugin del ejemplo, con una configuración mínima sería como 
+					sigue:</p>
+				<div class="edit">
+					<p class="code">
+						var items = [{src: "vid/3dacting2.mp4", title: "Vídeo", controls: "controls"},<br/>
+							{src: "img/lorempixel2.jpg", title: "lorempixel2.jpg", alt: "2/lorempixel.com"},<br/>
+							{src: "img/lorempixel3.jpg", title: "lorempixel3.jpg", alt: "3/lorempixel.com"},<br/>
+							{src: "img/lorempixel4.jpg", title: "lorempixel4.jpg", alt: "4/lorempixel.com"},<br/>
+							{src: "img/lorempixel5.jpg", title: "lorempixel5.jpg", alt: "5/lorempixel.com"},<br/>
+							{src: "img/lorempixel6.jpg", title: "lorempixel6.jpg", alt: "6/lorempixel.com"},<br/>
+							{src: "img/lorempixel7.jpg", title: "lorempixel7.jpg", alt: "7/lorempixel.com"},<br/>
+							{src: "img/lorempixel8.jpg", title: "lorempixel8.jpg", alt: "8/lorempixel.com"},<br/>
+							{src: "img/lorempixel9.jpg", title: "lorempixel9.jpg", alt: "9/lorempixel.com"},<br/>
+							{src: "img/lorempixel10.jpg", title: "lorempixel10.jpg", alt: "10/lorempixel.com"}];</p>
+					<br/>
+					<p class="code">$('#carousel').slider3d({items: items, 
+						width: "40vw", height: "30vh", maxheight: 300, responsive: true});</p>
+				</div>
+				<div class="paginar">
+					<img src="img/fizq.png" alt="fizq.png" title="previous" class="anterior"/>
+					<img src="img/fizq2.png" alt="fizq2.png" title="next" class="anterior mini"/>
+					<img src="img/fder2.png" alt="fder2.png" title="next" class="siguiente mini"/>
+					<img src="img/fder.png" alt="fder.png" title="next" class="siguiente"/>
+				</div>
+			</article>
+			<article id="art_posicfn" style="display: none">
+				<p>Las funciones javascript utilizadas para mover el carrusel son las siguientes:</p>
+				<div class="edit">
+					<span>{"move", n [, t1]}</span>
+					<p class="comment">Mover a derecha e izquierda. "n"
+						indica el número de items a desplazar y su dirección (según sea positivo o 
+						negativo). "t1" es el tiempo en milisegundos que empleará en el desplazamiento 
+						(def: 600):</p>
+					<p class="code">$('#carousel').slider3d("move", 1, 600);<br/>
+						$('#carousel').slider3d("move", -1);</p>
+					<br/>
+					<span>{"moveTo", idx [, t1]}</span>
+					<p class="comment">Mover a un item determinado. "idx" indica
+						el número de item y "t1" el tiempo de desplazamiento (def: 600):</p>
+					<p class="code">$('#carousel').slider3d("moveTo", n, 600);<br/>
+						$('#carousel').slider3d("moveTo", n);</p>
+					<br/>
+					<span>{"showControls" [, t1 | null] [, color1 | null] [, color2 | null] [, 
+						size | null] [, height | null] [, pos]}</span>
+					<p class="comment">Mostrar y ocultar controles para el desplazamiento a 
+						derecha e izquierda. Los parámetros son el tiempo de desplazamiento (def: 600), 
+						color (def: rgba(255, 255, 255, .5), color resaltado (def: rgb(255, 255, 
+						255), tamaño (def: 1em), altura (def: 5%) y posición (def: right-left 5%):</p>
+					<p class="code">$('#carousel').slider3d("showControls", 1000, null, null, 
+						"3em", null, "-10%");<br/>
+						$('#carousel').slider3d("showControls");<br/>
+						$('#carousel').slider3d("hideControls");</p>
+					<br/>
+					<span>{"showIndicators" [, t1 | null] [, color1 | null] [, color2 | null] [, 
+						size | null] [, height]}</span>
+					<p class="comment">Mostrar y ocultar indicadores/selectores de posición:/</p>
+					<p class="code">$('#carousel').slider3d("showIndicators", 1000, "lightgray", 
+						"blue", null, "-10%");<br/>
+						$('#carousel').slider3d("hideIndicators");</p>
+					<br/>
+					<span>{"random" [, t1]}</span>
+					<p class="comment">Posicionamiento aleatorio. Similar a moveTo pero 
+						sustituyendo n por un número calculado internamente al azar</p>
+					<p class="code">$('#carousel').slider3d("random", 1000);</p>
+				</div>
+				<div class="paginar">
+					<img src="img/fizq.png" alt="fizq.png" title="previous" class="anterior"/>
+					<img src="img/fizq2.png" alt="fizq2.png" title="next" class="anterior mini"/>
+					<img src="img/fder2.png" alt="fder2.png" title="next" class="siguiente mini"/>
+					<img src="img/fder.png" alt="fder.png" title="next" class="siguiente"/>
+				</div>
+			</article>
+			<article id="art_anim" style="display: none">
+				<div class="panel">
+					<button class="btn_animation">Animar Carrusel</button>
+					<div>
+						<div id="div_a">
+							<h3>A</h3>
+						</div>
+						<div id="div_parent">
+							<h3>Parent</h3>
+							<div id="ani" class="carrusel">
+							</div>
+						</div>
+						<div id="div_b">
+							<h3>B</h3>
+						</div>
+					</div>
+					<form>
+						<fieldset>
+							<legend>ANIMATING THE ITEMS</legend>
+							<select>
+								<option value="Element" selected>scaleElement</option>
+								<option value="Parent">scaleParent</option>
+								<option value="Width">scaleWidth</option>
+							</select>
+							<div class="cls_1">
+								<p>element: </p><label>A<input type="radio" name="ele" value="a" checked/></label>
+								<label>B<input type="radio" name="ele" value="b" /></label>
+								<label><span>Parent</span><input type="radio" name="ele" value="parent" /></label><br/>
+							</div>
+							<div class="cls_2">
+								<p>t1: </p><input type="number" class="segundos" min="1" step="1" value="600"/>
+							</div>
+							<div class="cls_3">
+								<p>t2: </p><input type="number" class="segundos" min="0" step="1" value="3000"/>
+							</div>
+							<div class="cls_4">
+								<p>dim: </p><label>"Both" *<input type="radio" name="dim" value="" checked /></label>
+								<label>"Width"<input type="radio" name="dim" value="width" /></label>
+								<label>"Height"<input type="radio" name="dim" value="height"/></label>
+							</div>
+							<div class="cls_5">
+								<p>overflow: </p><label>Hidden *<input type="radio" name="overflow" value="hidden" checked/></label>
+								<label>Visible<input type="radio" name="overflow" value="visible" /></label>
+							</div>
+							<div class="cls_6">
+								<p>scaleOnly: </p><label>false *<input type="radio" name="scaleonly" value="false" checked/></label>
+								<label>true<input type="radio" name="scaleonly" value="true" /></label>
+							</div>
+							<button type="button" class="btn_animation">Animate</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="paginar">
+					<img src="img/fizq.png" alt="fizq.png" title="previous" class="anterior"/>
+					<img src="img/fizq2.png" alt="fizq2.png" title="next" class="anterior mini"/>
+					<img src="img/fder2.png" alt="fder2.png" title="next" class="siguiente mini"/>
+					<img src="img/fder.png" alt="fder.png" title="next" class="siguiente"/>
+				</div>
+			</article>
+			<article id="art_animfn" style="display: none">
+				<p>Las funciones javascript utilizadas para animar los items del carrusel son las siguientes:</p>
+				<div class="edit" contenteditable>
+					<span>{"scaleElement" ele, [, t1 | null] [, t2 | null] [, dim]}</span>				
+					<p class="comment">Desplazar el ítem seleccionado hasta otro elemento del 
+						DOM. \"ele\" es el elemento donde se posicionará el ítem, \"t1\" el tiempo 
+						de desplazamiento (def: 600), \"t2\" el tiempo que permanecerá en la nueva 
+						ubicación (>=0 def: 3000) y \"dim\" la dimensión a la que se ajustará el 
+						tamaño del elemento ("both", "width" o "Height", por defecto "BOTH").</p><br/>
+					<p class="comment">Si el tiempo de permanencia en la nueva ubicación es cero, se 
+						tendrá que llamar a "scaleElementTerminate" para que el ítem regrese al 
+						carrusel:</p>
+					<p class="code">$('#carousel').slider3d("scaleElement", $("#div_A"), 1000, 4000, 
+						"Both");<br/>
+						$('#carousel').slider3d("scaleElementTerminate");</p>
+					<br/>
+					<span>{"scaleParent" ele, [, t1 | null] [, t2 | null] [, dim | null] [, overflow]}</span>				
+					<p class="comment">Desplazar el ítem seleccionado hasta el elemento padre del 
+						carrusel. El primer parámetro es el tiempo que empleará en el desplazamiento (>0), 
+						el segundo es el tiempo que permanecerá en la nueva ubicación (>=0), el 
+						tercero la dimensión a la que se ajustará el tamaño del elemento y el cuarto 
+						el valor de la propiedad overflow del elemento padre.</p>
+					<p class="code">$('#carousel').slider3d("scaleParent", 1000, 4000, "Both", "Visible");<br/>
+						$('#carousel').slider3d("scaleParentTerminate");</p>
+					<br/>
+					<span>{"scaleParent" ele, [, t1 | null] [, t2 | null] [, overflow]}</span>				
+					<p class="comment">Escalar el ítem seleccionado hasta el ancho del carrusel.
+						El primer parámetro es el tiempo que empleará en el escalado (>0), el segundo
+						es el tiempo que permanecerá con el nuevo tamaño (>=0) y el tercero el valor de 
+						la propiedad overflow del carrusel.</p>
+					<p class="code">$('#carousel').slider3d("scaleWidth", 1000, 4000, "Visible");<br/>
+						$('#carousel').slider3d("scaleWidthTerminate");</p>
+				</div>
+				<div class="paginar">
+					<img src="img/fizq.png" alt="fizq.png" title="previous" class="anterior"/>
+					<img src="img/fizq2.png" alt="fizq2.png" title="next" class="anterior mini"/>
+					<img src="img/fder2.png" alt="fder2.png" title="next" class="siguiente mini"/>
+					<img src="img/fder.png" alt="fder.png" title="next" class="siguiente"/>
+				</div>
+			</article>
+			<article id="art_videos" style="display: none">
+				<div class="panel">
+					<div id="div_parentvideos">
+						<button class="btn_animation">Animar Carrusel</button>
+						<div id="vid" class="carrusel">
+						</div>
+					</div>
+					<form>
+						<fieldset>
+							<legend>ANIMATING VIDEOS</legend>
+							<p>scaleParent parameter</p>
+							<div class="cls_1">
+								<p>t2: </p><input type="number" class="segundos" min="0" step="1" value="1"/>
+							</div>
+							<hr/>
+							<p>plugin options</p>
+							<div class="cls_2">
+								<p>videoAutoPlay: </p><label>False *<input type="radio" name="videoautoplay" value="false" checked/></label>
+								<label>True<input type="radio" name="videoautoplay" value="true" /></label>
+							</div>
+							<div class="cls_3">
+								<p>videoLoop: </p><label>False *<input type="radio" name="videoloop" value="false" checked/></label>
+								<label>True<input type="radio" name="videoloop" value="true" /></label>
+							</div>
+							<button type="button" class="btn_animation">Animate</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="paginar">
+					<img src="img/fizq.png" alt="fizq.png" title="previous" class="anterior"/>
+					<img src="img/fizq2.png" alt="fizq2.png" title="next" class="anterior mini"/>
+					<img src="img/fder2.png" alt="fder2.png" title="next" class="siguiente mini"/>
+					<img src="img/fder.png" alt="fder.png" title="next" class="siguiente"/>
+				</div>
+			</article>
+		</section>
+		<section style="display: none;">
+			<article>
+				<div>
+					<label>GitHub Repository: </label>
+					<a href="https://github.com/manuelgarciacr/mgc" target="_blank">https://github.com/manuelgarciacr/mgc</a>
+				</div>
+				<div class="panel">
+					<div>
+						<label>FAQ:</label>
+						<div class="edit">
+
+						</div>
+					</div>
+					<div>
+						<label>TODO:</label>
+						<div class="edit">
+
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+		<section style="display: none;">
+			<article>
+				<div class="panel">
+					<object data="img/Curriculum vitae Manuel 2017 - GitHub.pdf" type="application/pdf">
+						<iframe src="http://docs.google.com/viewerng/viewer?url='img/Curriculum vitae Manuel 2017 - GitHub.pdf'&embedded=true" type="application/pdf"></iframe>
+					</object>
+					<object data="img/Curriculum vitae Manuel 2017 - GitHub Mensa.pdf" type="application/pdf" style="display: none;">
+						<iframe src="http://docs.google.com/viewerng/viewer?url='img/Curriculum vitae Manuel 2017 - GitHub Mensa.pdf'&embedded=true" type="application/pdf" style="display: none;"></iframe>
+					</object>
+				</div>
+			</article>
+		</section>
+    </body>
+</html>
